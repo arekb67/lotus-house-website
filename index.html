@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lotus House — Brand Previews</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    background: #FEF5DD;
+    color: #765E55;
+    line-height: 1.55;
+  }
+  h1 { margin: 0 0 0.25rem; }
+  h2 { margin-top: 2rem; }
+  .lede { color: rgba(118, 94, 85, 0.7); margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.6rem 0; }
+  a { color: #765E55; }
+  a:hover { color: #E9B5BD; }
+  hr { border: none; border-top: 1px solid rgba(118, 94, 85, 0.2); margin: 2rem 0; }
+  footer { font-size: 0.85rem; color: rgba(118, 94, 85, 0.6); }
+  code { background: rgba(118, 94, 85, 0.08); padding: 1px 4px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<h1>Lotus House — Brand Previews</h1>
+<p class="lede">Multi-device test harness for the brand identity work in progress.</p>
+
+<h2>Typography</h2>
+<ul>
+  <li><a href="sheet3_weight_tuning_preview.html"><strong>Sheet 3 — Source Serif 4 weight tuning</strong></a> &nbsp;<em>(current focus)</em></li>
+  <li><a href="sheet2b_serifs_preview.html">Sheet 2b — Serif candidates</a> (Lora · Source Serif 4 · Fraunces)</li>
+  <li><a href="sheet2_sans_preview.html">Sheet 2 — Sans candidates</a> (Inter · Lato · Cormorant)</li>
+</ul>
+
+<hr>
+<footer>Deployed via <code>deploy.sh</code> in the brand repo. Files here are regenerated on each deploy — don't edit directly.</footer>
+
+<style>
+  #viewport-indicator {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 9999;
+    padding: 6px 10px;
+    background: rgba(118, 94, 85, 0.92);
+    color: #FEF5DD;
+    font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    border-radius: 4px;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<div id="viewport-indicator"></div>
+<script>
+(function () {
+  var el = document.getElementById('viewport-indicator');
+  function tier(w) {
+    if (w < 480) return 'phone';
+    if (w < 768) return 'phone-l';
+    if (w < 1024) return 'tablet';
+    if (w < 1440) return 'laptop';
+    return 'desktop';
+  }
+  function update() {
+    el.textContent = window.innerWidth + ' × ' + window.innerHeight + ' · ' + tier(window.innerWidth);
+  }
+  update();
+  window.addEventListener('resize', update);
+  window.addEventListener('orientationchange', update);
+})();
+</script>
+</body>
+</html>
