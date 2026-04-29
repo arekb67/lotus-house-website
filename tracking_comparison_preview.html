@@ -152,6 +152,54 @@
       color: var(--colour-text-2);
       line-height: 1.55;
     }
+
+    .decided {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+      background: linear-gradient(180deg, #FEF5DD 0%, #FDEFD0 100%);
+      border: 1px solid #E9B5BD;
+      border-left: 4px solid #765E55;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0 28px;
+    }
+
+    .decided-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #765E55;
+      background: rgba(118, 94, 85, 0.12);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .decided-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 16px;
+      color: #765E55;
+      font-weight: 600;
+    }
+
+    .decided-text {
+      font-size: 14px;
+      color: var(--colour-text-2);
+      flex: 1 1 280px;
+      min-width: 220px;
+      line-height: 1.5;
+    }
+
+    .legend-chosen {
+      background: rgba(233, 181, 189, 0.18);
+      box-shadow: inset 0 0 0 2px rgba(118, 94, 85, 0.35);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin: -10px -12px;
+    }
   </style>
 </head>
 <body>
@@ -171,14 +219,23 @@
       </p>
     </header>
 
+    <div class="decided" role="status">
+      <span class="decided-label">Decided</span>
+      <span class="decided-value">0.0625 em</span>
+      <span class="decided-text">
+        Locked 29/04/2026 after cross-device review on macbook + Aleksandra's iPhone. This page is
+        kept as a historical record of how the decision was reached.
+      </span>
+    </div>
+
     <dl class="legend">
       <div>
         <dt><span class="pill">0.04 em</span> Tighter, uniform</dt>
         <dd>Mentioned once in the Session 5 doc as a CSS approximation. Looks one consistent way at every size — but tighter than what Aleksandra approved on Sheet 3 in absolute pixel terms.</dd>
       </div>
-      <div>
-        <dt><span class="pill">0.0625 em</span> Sheet 3 Large match</dt>
-        <dd>Matches Sheet 3's <em>Large</em> card exactly (4 px tracking on 64 px font). At smaller render sizes, produces tighter absolute spacing than Sheet 3 Medium/Small. At larger sizes, produces airier spacing.</dd>
+      <div class="legend-chosen">
+        <dt><span class="pill">0.0625 em</span> ✓ Chosen — Sheet 3 Large match</dt>
+        <dd>Matches Sheet 3's <em>Large</em> card exactly (4 px tracking on 64 px font). At smaller render sizes, produces tighter absolute spacing than Sheet 3 Medium/Small. At larger sizes, produces airier spacing. Picked after cross-device review for being the most balanced read across all three sizes.</dd>
       </div>
       <div>
         <dt><span class="pill">4 px absolute</span> Sheet 3 actual</dt>
@@ -230,17 +287,26 @@
       </p>
     </div>
 
-    <h2>The honest framing of the decision</h2>
+    <h2>How the decision was reached</h2>
 
     <div class="insight">
       <p>
-        There is no universally-optimal value across all three sizes — each method is best at
-        some sizes and worst at others. The decision is which sizes matter most for Lotus House
-        in practice. <span class="pill">0.04 em</span> errs tight; <span class="pill">0.0625 em</span>
-        errs airy at large; <span class="pill">4 px absolute</span> errs airy at small / tight at
-        large. A fourth path is to use <em>different</em> em ratios per size band (e.g. 0.10 em
-        at &lt;= 32 px, 0.0625 em at &gt; 32 px) — the kind of optical-sizing that proper
-        typography systems use — but that adds complexity to anyone applying the brand.
+        There was no universally-optimal value across all three sizes — each method was best at
+        some sizes and worst at others. <span class="pill">0.04 em</span> erred tight;
+        <span class="pill">0.0625 em</span> erred slightly airy at very large sizes;
+        <span class="pill">4 px absolute</span> erred airy at small / tight at large.
+        After reviewing the comparison sheet on macbook + iPhone on 29/04/2026,
+        <span class="pill">0.0625 em</span> read as the most consistent and balanced across the
+        full range — including the small-render context where it is slightly tighter than
+        Sheet 3 Small originally rendered. The ratio is now canonicalised as the LOTUS HOUSE
+        wordmark spec for all design-time renders (composed layouts, brand guidelines, future
+        exports).
+      </p>
+      <p style="margin-top: 10px;">
+        A fourth path — using <em>different</em> em ratios per size band (the kind of
+        optical-sizing proper typography systems use) — was discussed and parked. A single em
+        ratio is simpler to apply consistently and the visual difference at the extremes is
+        small enough that the simplicity wins.
       </p>
     </div>
   </main>
