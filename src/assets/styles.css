@@ -1,0 +1,179 @@
+/* ============================================================================
+   Lotus House — Site stylesheet (Stage 1 foundation)
+   ============================================================================
+
+   Stage 1 scope (Session 16, 03/05/2026):
+     - Palette tokens (warm token system from 02_brand_palette/lotus_house_palette.css)
+     - Typography defaults using Source Serif 4 (loaded via Google Fonts in base.njk)
+     - Wordmark spec at the locked Regular 400 / 0.0625em letter-spacing
+     - Empty <thead> row hidden on the Privacy key-facts table
+     - All visual values match the previous inline placeholder so this is
+       architecture-only, not a design pass
+
+   Stage 2 (deferred — design pass): heading scale, header layout treatment,
+   home triple-stack fix, image styling, link styling, mobile breakpoints,
+   cross-device review.
+   ============================================================================ */
+
+
+/* ----------------------------------------------------------------------------
+   PALETTE TOKENS
+   Source of truth lives at 02_brand_palette/lotus_house_palette.css in the
+   brand repo. Tokens duplicated here so the website is self-contained — when
+   the palette evolves, sync both files.
+   ---------------------------------------------------------------------------- */
+:root {
+    /* Primary brand colours — five colours that define Lotus House. */
+    --lotus-rose: #E9B5BD;
+    --lotus-coral: #FECABC;
+    --lotus-cream: #FEF5DD;
+    --lotus-sage: #BBBFA2;
+    --lotus-deep: #765E55;
+
+    /* Secondary petal tones — accents and gradients. */
+    --lotus-petal-peach: #FFE5CE;
+    --lotus-petal-lavender: #E4D6E4;
+    --lotus-petal-mauve: #EBE0E7;
+    --lotus-petal-raspberry: #E3A1AB;
+
+    /* Functional aliases — every neutral leans rose (warm-token rule). */
+    --colour-bg: #FCF7F8;
+    --colour-surface: #FEFCFC;
+    --colour-surface-2: #FBF3F4;
+    --colour-border: #E6D9DB;
+    --colour-border-strong: #C7BABC;
+    --colour-text: #3A2F2B;
+    --colour-text-2: #60534E;
+    --colour-text-muted: #726560;
+
+    --colour-brand: var(--lotus-rose);
+    --colour-brand-accent: var(--lotus-coral);
+    --colour-brand-deep: var(--lotus-deep);
+
+    --colour-brand-subtle: #FBF1F3;
+    --colour-brand-subtle-coral: #FEF3F0;
+    --colour-brand-subtle-sage: #EAEBE3;
+
+    /* Warm-tinted shadows using brand-deep RGBA — never pure black. */
+    --shadow-sm: 0 1px 3px rgba(118, 94, 85, 0.08), 0 0 0 1px rgba(118, 94, 85, 0.04);
+    --shadow-md: 0 4px 16px rgba(118, 94, 85, 0.10), 0 1px 4px rgba(118, 94, 85, 0.06);
+    --shadow-lg: 0 12px 40px rgba(118, 94, 85, 0.12), 0 2px 8px rgba(118, 94, 85, 0.06);
+
+    /* Hairline border colour — derived from --lotus-deep at 20% alpha to keep
+       header / footer rules tonally tied to the wordmark colour. */
+    --rule-faint: rgba(118, 94, 85, 0.2);
+
+    /* Footer text — slightly muted relative to body. */
+    --footer-text: rgba(118, 94, 85, 0.8);
+}
+
+
+/* ----------------------------------------------------------------------------
+   BODY + TYPOGRAPHY
+   Source Serif 4 is loaded via <link> in base.njk with display=swap, so the
+   body falls back to Georgia until the web font arrives (no flash of invisible
+   text). Values for max-width / line-height / margins match the previous
+   inline placeholder; Stage 2 will retune when the design pass lands.
+   ---------------------------------------------------------------------------- */
+body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    background: var(--lotus-cream);
+    color: var(--lotus-deep);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--lotus-deep);
+}
+a:hover {
+    color: var(--lotus-rose);
+}
+
+
+/* ----------------------------------------------------------------------------
+   HEADER + WORDMARK + PRIMARY NAV
+   Wordmark spec locked Sessions 5 + 7: Source Serif 4 Regular 400 / 0.0625em
+   letter-spacing / ALL CAPS. Stage 1 keeps the wordmark text-only; Stage 2 may
+   bring composed-layout assets in (decisions-doc step 7).
+   ---------------------------------------------------------------------------- */
+header {
+    border-bottom: 1px solid var(--rule-faint);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.wordmark {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--lotus-deep);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+nav a {
+    text-decoration: none;
+}
+
+
+/* ----------------------------------------------------------------------------
+   MAIN CONTENT
+   ---------------------------------------------------------------------------- */
+main h1 {
+    margin-top: 0;
+}
+
+
+/* ----------------------------------------------------------------------------
+   TABLES
+   The Privacy key-facts table (locked snapshot) uses the markdown `| | |`
+   empty-header syntax, which markdown-it renders as a <thead><tr><th></th>
+   <th></th></tr></thead> followed by <tbody>. The :has() rule below hides
+   any <thead> whose every <th> is empty, so the visible thin header row
+   above the data goes away without us touching the locked content.
+   :has() is supported in all major browsers since 2022/2023.
+   ---------------------------------------------------------------------------- */
+thead:not(:has(th:not(:empty))) {
+    display: none;
+}
+
+
+/* ----------------------------------------------------------------------------
+   FOOTER
+   ---------------------------------------------------------------------------- */
+footer {
+    border-top: 1px solid var(--rule-faint);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--footer-text);
+}
+
+
+/* ----------------------------------------------------------------------------
+   ACCESSIBILITY
+   Skip-link revealed only on keyboard focus — sighted-mouse users never see it
+   but screen-reader and keyboard users land on it as the first focusable
+   element on every page.
+   ---------------------------------------------------------------------------- */
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
