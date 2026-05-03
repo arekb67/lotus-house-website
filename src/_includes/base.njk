@@ -41,7 +41,7 @@
   {#- Site stylesheet — palette tokens + typography + wordmark spec. -#}
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
+<body{% if page.url == '/' %} class="home"{% endif %}>
   <a class="visually-hidden" href="#main">Skip to main content</a>
 
   <header>
