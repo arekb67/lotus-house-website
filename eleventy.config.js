@@ -21,6 +21,11 @@ export default function(eleventyConfig) {
   // we map it explicitly. Source path on the left, output path on the right.
   eleventyConfig.addPassthroughCopy({ "harness": "harness" });
 
+  // CNAME file for GitHub Pages custom domain. Must land at the root of the
+  // deployed artefact (_site/CNAME) for Pages to recognise lotushousetherapy.com
+  // as the custom domain. Without an extension, 11ty would otherwise ignore it.
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+
   // {% year %} shortcode — emits the current year, useful for footer copyright.
   // Evaluated at build time, so a rebuild after 31/12 picks up the new year.
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
