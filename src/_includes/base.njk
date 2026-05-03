@@ -45,7 +45,10 @@
   <a class="visually-hidden" href="#main">Skip to main content</a>
 
   <header>
-    <a href="/" class="wordmark">{{ site.title }}</a>
+    <a href="/" class="wordmark">
+      <img src="/assets/lotus_icon.png" alt="" width="180" height="180" class="wordmark-icon">
+      <span class="wordmark-text">{{ site.title }}</span>
+    </a>
     <nav aria-label="Primary">
       <ul>
         {%- for item in site.nav %}

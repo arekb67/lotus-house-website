@@ -115,15 +115,29 @@ a:hover {
 header {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 0.5rem 1.5rem;
     border-bottom: 1px solid var(--rule-faint);
     margin-bottom: 2rem;
     padding-bottom: 1rem;
 }
+/* align-items: center (changed from baseline in Stage 2.7). The wordmark used
+   to be a single text element; baseline alignment lined the wordmark text
+   baseline up with the nav text baselines. After Stage 2.7 the wordmark
+   contains both the lotus icon and the text together, so the wordmark element
+   is taller. Centre alignment keeps the nav vertically aligned with the
+   middle of the icon + text band rather than dragging it down to the icon's
+   bottom edge (which is what baseline would do). */
 
 .wordmark {
+    /* inline-flex makes the <a> a flex container for its own children (icon +
+       text) while still behaving as a flex item inside <header>. gap creates
+       breathing room between icon and text; align-items: center puts the
+       icon's vertical centre on the wordmark text's vertical centre. */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: 'Source Serif 4', Georgia, serif;
     font-weight: 400;
     font-size: 1.5rem;
@@ -131,6 +145,15 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--lotus-deep);
+}
+.wordmark-icon {
+    /* 2.75rem ≈ 44 px at the default 16 px root font size. Source PNG is
+       180 × 180 transparent (icon-only watercolour lotus), giving 4 × retina
+       coverage at this display size. width: auto preserves aspect ratio
+       (square); explicit width / height attributes on the <img> reserve the
+       layout slot before the image loads (no CLS hit on slow connections). */
+    height: 2.75rem;
+    width: auto;
 }
 
 nav ul {
