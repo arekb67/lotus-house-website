@@ -13,7 +13,7 @@ on:
 permissions:
   contents: read   # to check out the source code
   pages: write     # to publish to GitHub Pages
-  id-token: write  # for the OIDC handshake actions/deploy-pages@v4 uses
+  id-token: write  # for the OIDC handshake actions/deploy-pages uses
 
 # Only one Pages deploy at a time per repo.
 # If two pushes land back-to-back, the second waits for the first to finish.
@@ -26,10 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'   # current LTS (April 2024 release, supported through April 2027)
           cache: 'npm'         # cache the npm download store between runs to speed installs
@@ -42,7 +42,7 @@ jobs:
         run: npm run build      # runs eleventy, writes _site/
 
       - name: Upload Pages artefact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site           # bundles _site/ as the artefact for the deploy job
 
@@ -55,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
