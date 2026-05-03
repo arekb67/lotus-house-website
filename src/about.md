@@ -6,7 +6,7 @@ description: About Aleksandra Baranowski, a child and adolescent psychodynamic p
 
 # About
 
-![Aleksandra Baranowski](/assets/aleksandra_portrait.jpg)
+<img src="/assets/aleksandra_portrait.jpg" alt="Aleksandra Baranowski" width="1474" height="1864">
 
 Welcome to Lotus House.
 
