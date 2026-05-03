@@ -1,19 +1,20 @@
 ---
 layout: base.njk
-title: Home
+description: Lotus House is the practice of Aleksandra Baranowski, a child and adolescent psychodynamic psychotherapist working with children, young people, and young adults aged 4 to 24. Free 20-minute consultation, in person and online.
 ---
 
 # Lotus House
 
-Placeholder home page. The locked v2 copy from `08_website/copy/Lotus_House_Website_Copy_Home_and_FAQ_v2_locked.md` (in the brand repo) will land here in a later session.
+## Psychotherapy for Children and Adolescents
 
-## What this page proves
+Welcome to Lotus House.
 
-If you can read this, the build pipeline is working end to end:
+I'm Aleksandra Baranowski, a Child and Adolescent Psychodynamic Psychotherapist working with children, young people, and young adults aged 4 to 24. My practice offers a calm, safe, and reflective space where each young person can feel understood, and begin to make sense of patterns, emotions, and experiences that may be shaping how they feel.
 
-- **11ty** has read this markdown file from `src/index.md`.
-- **Nunjucks** has wrapped it in the `base.njk` layout.
-- The base layout has rendered the wordmark, navigation, and footer using values from `src/_data/site.json`.
-- Static HTML output has been written to `_site/index.html` and served by the dev server.
+I support a wide range of difficulties, from anxiety and low mood through to bereavement, school refusal, self-harm, and the transitions that come with adolescence. I have particular experience working with neurodivergent and SEN young people, including those with autism, ADHD, and other learning differences.
 
-The other navigation links above (About, Services, FAQ, Contact) will 404 until the locked v2 copy is brought in next session.
+I'm a registered member of the British Association for Counselling and Psychotherapy (BACP), work to the BACP Ethical Framework, hold professional indemnity insurance, and meet regularly with a qualified clinical supervisor — practical commitments that mean the work is held safely.
+
+My approach is child-centred and grounded in psychodynamic thinking — which simply means I focus on the unique inner world each young person brings, and work at the pace they set. With younger children I may use play, creativity, and symbolic communication; with adolescents and young adults I offer a more traditional talking therapy approach. The goal isn't to "fix" anyone, but to offer a space where they can feel heard, understood, and supported.
+
+If you're considering therapy for a young person in your life, the best first step is to get in touch. I offer a **free 20-minute phone or Zoom consultation** so we can talk through what's bringing you in touch and whether I'm likely to be the right fit. There's no commitment — just a conversation.
