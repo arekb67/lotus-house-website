@@ -1,0 +1,58 @@
+name: Build and deploy 11ty site to GitHub Pages
+
+# When this workflow runs:
+#   - on every push to main (so the live site auto-updates on push)
+#   - or manually from the Actions tab via "Run workflow"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissions for the workflow's auto-generated GITHUB_TOKEN.
+# Principle of least privilege: grant only what the steps actually need.
+permissions:
+  contents: read   # to check out the source code
+  pages: write     # to publish to GitHub Pages
+  id-token: write  # for the OIDC handshake actions/deploy-pages@v4 uses
+
+# Only one Pages deploy at a time per repo.
+# If two pushes land back-to-back, the second waits for the first to finish.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'   # current LTS (April 2024 release, supported through April 2027)
+          cache: 'npm'         # cache the npm download store between runs to speed installs
+
+      - name: Install dependencies
+        run: npm ci             # like npm install but installs the exact tree
+                                # locked in package-lock.json (no surprise upgrades)
+
+      - name: Build site
+        run: npm run build      # runs eleventy, writes _site/
+
+      - name: Upload Pages artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site           # bundles _site/ as the artefact for the deploy job
+
+  deploy:
+    needs: build                # only runs if build succeeded
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}   # surfaces the live URL on the run page
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
