@@ -1,0 +1,20 @@
+{
+  "name": "lotus-house-website",
+  "version": "0.1.0",
+  "description": "Public website for Lotus House — Aleksandra's children & adolescent psychotherapy practice. Built with 11ty (Eleventy), deployed via GitHub Pages.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arekb67/lotus-house-website.git"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

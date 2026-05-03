@@ -1,0 +1,14 @@
+{
+  "title": "Lotus House",
+  "tagline": "Psychotherapy for Children and Adolescents",
+  "description": "Lotus House — children and adolescent psychotherapy.",
+  "url": "https://lotushousetherapy.com",
+  "email": "hello@lotushousetherapy.com",
+  "nav": [
+    { "url": "/",         "label": "Home" },
+    { "url": "/about/",   "label": "About" },
+    { "url": "/services/", "label": "Services" },
+    { "url": "/faq/",     "label": "FAQ" },
+    { "url": "/contact/", "label": "Contact" }
+  ]
+}

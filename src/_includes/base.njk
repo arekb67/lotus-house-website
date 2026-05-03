@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {%- if title %}
+  <title>{{ title }} — {{ site.title }}</title>
+  {%- else %}
+  <title>{{ site.title }} — {{ site.tagline }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ description or site.description }}">
+
+  {#- Favicon set: deep-bg variants validated in real browser tab Session 12.
+      Pastel watercolour on a transparent background washes out on light browser
+      tab chrome at 16-32 px; the --lotus-deep #765E55 backdrop fixes contrast. -#}
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_180x180.png">
+
+  {#- Cloudflare Web Analytics — replace BEACON_TOKEN once the property is
+      enrolled at dash.cloudflare.com → Web Analytics → Add a site (manual
+      setup mode, not the proxy mode that requires DNS at Cloudflare). Until
+      enrolled, the snippet stays commented out and no analytics are collected. -#}
+  {#-
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "BEACON_TOKEN"}'></script>
+  -#}
+
+  {#- Site stylesheet — placeholder reference, real CSS file lands in a later
+      session. The inline <style> below carries minimal placeholder styles so
+      pages are at least readable in the meantime. -#}
+  {#- <link rel="stylesheet" href="/assets/styles.css"> -#}
+
+  <style>
+    /* Placeholder styles — minimal, readable, replaced when /assets/styles.css lands.
+       Palette: --lotus-cream #FEF5DD (page bg), --lotus-deep #765E55 (text + wordmark),
+       --lotus-rose #E9B5BD (link hover). Wordmark spec: Source Serif 4 Regular 400 /
+       0.0625 em letter-spacing (locked Session 7). Source Serif 4 isn't loaded yet
+       so the body falls back to Georgia + serif default until the CSS pass. */
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      background: #FEF5DD;
+      color: #765E55;
+      line-height: 1.6;
+    }
+    a { color: #765E55; }
+    a:hover { color: #E9B5BD; }
+    header {
+      border-bottom: 1px solid rgba(118, 94, 85, 0.2);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+    .wordmark {
+      font-size: 1.5rem;
+      letter-spacing: 0.0625em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a { text-decoration: none; }
+    main h1 { margin-top: 0; }
+    footer {
+      border-top: 1px solid rgba(118, 94, 85, 0.2);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: rgba(118, 94, 85, 0.8);
+    }
+    /* Skip-link: hidden until keyboard focus reveals it (accessibility). */
+    .visually-hidden:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  </style>
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to main content</a>
+
+  <header>
+    <a href="/" class="wordmark">{{ site.title }}</a>
+    <nav aria-label="Primary">
+      <ul>
+        {%- for item in site.nav %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      &nbsp;·&nbsp;
+      <a href="/privacy/">Privacy &amp; policies</a>
+    </p>
+    <p>&copy; {% year %} {{ site.title }}.</p>
+  </footer>
+</body>
+</html>
