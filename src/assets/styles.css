@@ -63,8 +63,13 @@
        header / footer rules tonally tied to the wordmark colour. */
     --rule-faint: rgba(118, 94, 85, 0.2);
 
-    /* Footer text — slightly muted relative to body. */
-    --footer-text: rgba(118, 94, 85, 0.8);
+    /* Footer text — same colour as body (--lotus-deep, solid). The earlier
+       0.8 alpha gave a subtle muting but failed WCAG AA contrast (3.8:1
+       against the cream background; AA wants 4.5:1). The footer is already
+       visually distinguished from body by the top border, smaller font size,
+       and 3rem top margin, so dropping the alpha doesn't conflate it with
+       body text. Discovered Session 18 Lighthouse audit. */
+    --footer-text: var(--lotus-deep);
 }
 
 

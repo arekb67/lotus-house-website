@@ -30,6 +30,12 @@ export default function(eleventyConfig) {
   // Evaluated at build time, so a rebuild after 31/12 picks up the new year.
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  // markdown-it typographer: turns straight apostrophes / quotes into typeset
+  // smart quotes at build time (’ instead of ', “” instead of "). Em-dashes
+  // (—), en-dashes (–), and ellipses (…) are preserved when already typed.
+  // Source markdown stays untouched; the transformation is purely build-time.
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.set({ typographer: true }));
+
   return {
     dir: {
       input: "src",
