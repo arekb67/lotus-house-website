@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Contact
-description: Contact Lotus House. Email hello@lotushousetherapy.com to arrange a free 20-minute phone or Zoom consultation about therapy for a young person aged 4 to 24.
+description: Contact Lotus House. Email therapy@lotushousetherapy.com to arrange a free 20-minute phone or Zoom consultation about therapy for a young person aged 4 to 24.
 ---
 
 # Contact
@@ -10,7 +10,7 @@ If you're considering therapy for a young person in your life, the best first st
 
 ## How to reach me
 
-The easiest way to make first contact is by **email** at **[hello@lotushousetherapy.com](mailto:hello@lotushousetherapy.com)**. I aim to reply **within two working days**.
+The easiest way to make first contact is by **email** at **[therapy@lotushousetherapy.com](mailto:therapy@lotushousetherapy.com)**. I aim to reply **within two working days**.
 
 After that first exchange, we'll arrange a free 20-minute phone or Zoom consultation to talk things through.
 

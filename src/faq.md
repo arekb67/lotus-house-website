@@ -6,7 +6,7 @@ description: Common questions about psychotherapy at Lotus House — practical d
 
 # Frequently asked questions
 
-These are the questions I'm most often asked by parents thinking about therapy for a young person in their life. If yours isn't here, please email me at **[hello@lotushousetherapy.com](mailto:hello@lotushousetherapy.com)** and I'll be glad to answer it.
+These are the questions I'm most often asked by parents thinking about therapy for a young person in their life. If yours isn't here, please email me at **[therapy@lotushousetherapy.com](mailto:therapy@lotushousetherapy.com)** and I'll be glad to answer it.
 
 ## Practical
 
@@ -56,4 +56,4 @@ What your child shares in our sessions stays between us, with one important set 
 
 ---
 
-If you have a question that isn't answered here, the easiest way to ask is by email at **[hello@lotushousetherapy.com](mailto:hello@lotushousetherapy.com)**. I aim to reply within two working days.
+If you have a question that isn't answered here, the easiest way to ask is by email at **[therapy@lotushousetherapy.com](mailto:therapy@lotushousetherapy.com)**. I aim to reply within two working days.
