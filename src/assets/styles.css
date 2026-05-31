@@ -217,6 +217,45 @@ main img {
     margin: 1rem 0;
 }
 
+/* BACP registration badge — bottom-of-About professional credential.
+
+   The wrapper anchor IS the white card: background, padding, rounded corners
+   and warm shadow. Two non-obvious choices in here:
+
+   1. Explicit max-width on the wrapper. Without it, both `display: block`
+      and `display: inline-block` size the card to the image's *intrinsic*
+      1280px width (or shrink-to-fit on intrinsic), and the white card
+      balloons way past the visible image. Matching max-width to the image's
+      display cap (280px from the `main img` rule) keeps card and image in
+      lockstep so the padding reads as a uniform frame.
+
+   2. The image inside needs width:100% + max-width:none. The inherited
+      `main img` rule caps width at min(280px, 50%) — the 50% would resolve
+      against the containing block (the wrapper, 280px), shrinking the
+      image to 140px inside the card. Overriding restores it to 280px.
+
+   Literal #fff (not --colour-surface) is deliberate: the BACP JPEG has pure
+   white pixels around the text, and a warm-white wrapper would leave a
+   faint seam where the two whites meet. */
+.bacp-badge {
+    display: block;
+    max-width: 280px;
+    margin-top: 2.5rem;
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+.bacp-badge img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+}
+
 /* Home-only: hide body h1 "Lotus House" visually because the header wordmark
    already presents the brand name. Stage 2 D2: removes the triple-stack of
    header wordmark + body h1 + body h2 on the home page, while preserving the

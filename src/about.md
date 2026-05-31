@@ -29,3 +29,7 @@ Before opening this practice I worked therapeutically with children and adolesce
 ## Beyond the therapy room
 
 Outside of my work I'm a qualified yoga teacher and have a long-standing interest in philosophy.
+
+<a class="bacp-badge" href="https://www.bacp.co.uk/search/Register" target="_blank" rel="noopener">
+  <img src="/assets/bacp_registered_member_417881.jpg" alt="BACP Registered Member 417881 — accredited register on the BACP Register" width="1280" height="571">
+</a>
