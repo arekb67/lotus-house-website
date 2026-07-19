@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: About
-description: About Aleksandra Baranowski, a child and adolescent psychodynamic psychotherapist working with children, young people, and young adults aged 4 to 24.
+description: About Aleksandra Baranowski, a child and adolescent psychodynamic psychotherapist working with children, young people, and young adults aged 4 to 24 across South West London.
 ---
 
 # About

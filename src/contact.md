@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Contact
-description: Contact Lotus House. Email therapy@lotushousetherapy.com to arrange a free 20-minute phone or Zoom consultation about therapy for a young person aged 4 to 24.
+description: Contact Lotus House. Email therapy@lotushousetherapy.com to arrange a free 20-minute phone or Zoom consultation about therapy for a young person aged 4 to 24 in South West London.
 ---
 
 # Contact

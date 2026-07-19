@@ -20,7 +20,11 @@ Each session is 50 minutes, normally once a week. Weekly meetings give the work 
 
 ### Do you work in person or online?
 
-Most sessions are in person at my practice room. Online sessions (by Zoom) are available in specific situations, such as illness, school holidays, or when in-person work isn't practical. For younger children, in-person sessions are usually the better fit; for adolescents and young adults, online can work well as a regular alternative.
+Most sessions are in person across South West London. Online sessions (by Zoom) are available in specific situations, such as illness, school holidays, or when in-person work isn't practical. For younger children, in-person sessions are usually the better fit; for adolescents and young adults, online can work well as a regular alternative.
+
+### Where are you based?
+
+I see young people in person across South West London, and offer online sessions by Zoom where that works better. If you'd like to check whether I can see your child in person near you, please just ask when you get in touch.
 
 ### How long does therapy usually last?
 

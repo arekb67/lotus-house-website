@@ -1,11 +1,13 @@
 ---
 layout: base.njk
-description: Lotus House is the practice of Aleksandra Baranowski, a child and adolescent psychodynamic psychotherapist working with children, young people, and young adults aged 4 to 24. Free 20-minute consultation, in person and online.
+description: Lotus House is the practice of Aleksandra Baranowski, a child and adolescent psychodynamic psychotherapist working with children, young people, and young adults aged 4 to 24 across South West London. Free 20-minute consultation, in person and online.
 ---
 
 # Lotus House
 
 ## Psychotherapy for Children and Adolescents
+
+<p class="hero-location">In person across South West London</p>
 
 Welcome to Lotus House.
 

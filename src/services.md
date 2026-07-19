@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Services
-description: Lotus House services for children, young people, and young adults aged 4 to 24. Psychodynamic psychotherapy in person and online, 50-minute weekly sessions, free 20-minute initial consultation, £60 per session.
+description: Lotus House services for children, young people, and young adults aged 4 to 24. Psychodynamic psychotherapy in South West London, in person and online. 50-minute weekly sessions, free 20-minute initial consultation, £60 per session.
 ---
 
 # Services
@@ -30,7 +30,7 @@ I have particular experience supporting neurodivergent and SEN young people, inc
 
 Each session is **50 minutes**, normally **once a week**. I offer both **short-term** work (focused around a particular difficulty) and **open-ended** work (where therapy continues for as long as it feels useful), and we'll talk together about which fits best for the young person you have in mind.
 
-Sessions are usually **in person** at my practice room [TBD: practice address], with **online sessions** available in specific circumstances (for example, illness, school holidays, or where in-person isn't practical).
+Sessions are usually **in person across South West London**, with **online sessions** available in specific circumstances (for example, illness, school holidays, or where in-person isn't practical).
 
 A typical first contact looks like this:
 

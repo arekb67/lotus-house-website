@@ -256,6 +256,27 @@ main img {
     margin: 0;
 }
 
+/* Hero location line — sits directly under the home-page tagline (h2) and names
+   the service area prominently (South West London) for both visitors scanning
+   "is she near me?" and local search. Deep brand colour + SemiBold so it reads
+   as an intentional strapline, not body text; the middot separator groups the
+   place and the online note as one calm line. Added 19/07/2026. */
+.hero-location {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--lotus-deep);
+    margin: 0.25rem 0 1.75rem;
+}
+
+/* Footer location line — repeats the service area on every page (footer is the
+   one block present site-wide), so the location is always one glance away. */
+.footer-location {
+    font-weight: 600;
+    color: var(--footer-text);
+    margin-bottom: 0.5rem;
+}
+
+
 /* Home-only: hide body h1 "Lotus House" visually because the header wordmark
    already presents the brand name. Stage 2 D2: removes the triple-stack of
    header wordmark + body h1 + body h2 on the home page, while preserving the
