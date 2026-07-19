@@ -11,6 +11,31 @@
   {%- endif %}
   <meta name="description" content="{{ description or site.description }}">
 
+  {#- Structured data (JSON-LD). Declares Lotus House as a LocalBusiness and
+      states areaServed = "South West London" in machine-readable form, so search
+      engines are told the service area directly rather than inferring it from
+      body text. Invisible to visitors. Site-wide (one identity per page is fine).
+      Added 19/07/2026 — validate on the live URL with Google's Rich Results Test
+      (https://search.google.com/test/rich-results). Pairs with a future Google
+      Business Profile (see FUTURE_OPTIMISATIONS_AND_HOUSEKEEPING.md). -#}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.title }}",
+    "description": "Child and adolescent psychodynamic psychotherapy",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}",
+    "image": "{{ site.url }}/assets/lotus_icon.png",
+    "areaServed": "South West London",
+    "founder": {
+      "@type": "Person",
+      "name": "Aleksandra Baranowski",
+      "jobTitle": "Child and Adolescent Psychodynamic Psychotherapist"
+    }
+  }
+  </script>
+
   {#- Favicon set: deep-bg variants validated in real browser tab Session 12.
       Pastel watercolour on a transparent background washes out on light browser
       tab chrome at 16-32 px; the --lotus-deep #765E55 backdrop fixes contrast. -#}
