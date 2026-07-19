@@ -1,0 +1,13 @@
+---
+# robots.txt — crawler guidance, written to the site root as /robots.txt.
+# Allows all search engines to crawl the site, points them at the sitemap, and
+# keeps the internal multi-device review harness (/harness/) out of search
+# results (it's a build/QA tool, not public content).
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+Disallow: /harness/
+
+Sitemap: {{ site.url }}/sitemap.xml

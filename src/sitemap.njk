@@ -1,0 +1,21 @@
+---
+# XML sitemap — lists every public page for search engines. Not required for a
+# small, well-linked site, but tidy to have and it's the file you submit to
+# Google Search Console. permalink writes it to the site root as /sitemap.xml;
+# eleventyExcludeFromCollections keeps this template from listing itself.
+#
+# Only 11ty content pages appear here (the /harness/ review tool is passthrough
+# copy, not a collection item, so it's correctly absent). lastmod is deliberately
+# omitted: page dates don't reliably track real content changes, and Google
+# distrusts inaccurate lastmod values more than a missing one.
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+  <url>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+  </url>
+{%- endfor %}
+</urlset>
